@@ -12,7 +12,9 @@ getMyEle('#btnThemSo').onclick = function () {
 getMyEle('#btnTinhTong').onclick = function () {
     var tong = 0;
     for (var i = 0; i < themSo.length; i++) {
-        tong += themSo[i]
+        if(themSo[i] >= 0){
+            tong += themSo[i]
+        }
     }
     getMyEle('#txtTinhTong').innerHTML = 'Tổng bằng: ' + tong
 }
@@ -51,7 +53,7 @@ getMyEle('#btnTimSoDuongNho').onclick = function () {
 getMyEle('#btnTimSoChanCuoi').onclick = function () {
     var soChanCuoi = 0;
     for (var i = 0; i < themSo.length; i++) {
-        if (themSo[i] % 2 === 0) {
+        if (themSo[i] % 2 === 0 && themSo[i] >= 0) {
             soChanCuoi = themSo[i]
         }
     }
